@@ -162,11 +162,11 @@ local telescope_git_worktree = function(opts)
         if entry.sha ~= "(bare)" then
             local index = #results + 1
             for key, val in pairs(widths) do
-                if key == 'path' then
-                    local new_path = utils.transform_path(opts, entry[key])
-                    local path_len = strings.strdisplaywidth(new_path or "")
-                    widths[key] = math.max(val, path_len)
-                else
+                -- if key == 'path' then
+                --     local new_path = utils.transform_path(opts, entry[key])
+                --     local path_len = strings.strdisplaywidth(new_path or "")
+                --     widths[key] = math.max(val, path_len)
+                -- else
                     widths[key] = math.max(val, strings.strdisplaywidth(entry[key] or ""))
                 end
             end
